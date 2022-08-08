@@ -39,7 +39,7 @@ if ( (isset($_GET['id'])) && (is_numeric($_GET['id'])) ) {
 	exit();
 }
 
-require_once ('../mysqli_connect.php'); 
+require_once ('./mysqli_connect.php'); 
 
 // Check if the form has been submitted:
 if (isset($_POST['submitted'])) {
