@@ -7,13 +7,13 @@ include ('includes/header.html');
 require_once ('./mysqli_connect.php');
  
 // Default query for this page:
-//$q = "SELECT artists.artist_id, CONCAT_WS(' ', first_name, middle_name, last_name) AS artist, print_name, price, description, print_id FROM artists, prints WHERE artists.artist_id = prints.artist_id ORDER BY artists.last_name ASC, prints.print_name ASC";
+$q = "SELECT artists.artist_id, CONCAT_WS(' ', first_name, middle_name, last_name) AS artist, print_name, price, description, print_id FROM artists, prints WHERE artists.artist_id = prints.artist_id ORDER BY artists.last_name ASC, prints.print_name ASC";
 
 // Are we looking at a particular artist?
 if (isset($_GET['aid']) && is_numeric($_GET['aid']) ) {
 	$aid = (int) $_GET['aid'];
 	if ($aid > 0) { // Overwrite the query:
-		//$q = "SELECT artists.artist_id, CONCAT_WS(' ', first_name, middle_name, last_name) AS artist, print_name, price, description, print_id FROM artists, prints WHERE artists.artist_id = prints.artist_id AND prints.artist_id = $aid ORDER BY prints.print_name";
+		$q = "SELECT artists.artist_id, CONCAT_WS(' ', first_name, middle_name, last_name) AS artist, print_name, price, description, print_id FROM artists, prints WHERE artists.artist_id = prints.artist_id AND prints.artist_id = $aid ORDER BY prints.print_name";
 	}
 }
 
@@ -23,7 +23,7 @@ echo '<div id="content">
          <div class="inside">
             <!-- box begin -->
             <div class="box alt">
-            	<div class="left-top-corner">
+            	<div class="lefqt-top-corner">
                	<div class="right-top-corner">
                   	<div class="border-top"></div>
                   </div>
